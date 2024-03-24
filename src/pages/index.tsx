@@ -3,7 +3,6 @@ import MessagesList from 'components/MessageList'
 import { NextPage } from 'next'
 import { MessagesProvider } from 'utils/useMessages'
 import Layout from '../components/Layout'
-import IntroPage from '../components/IntroPage';
 
 const IndexPage: NextPage = () => {
   return (
