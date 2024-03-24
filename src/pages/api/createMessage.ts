@@ -20,9 +20,11 @@ export default async function createMessage(req: NextApiRequest, res: NextApiRes
       },
       body
     })
+
     const data = await response.json()
     res.status(200).json({ data })
-  } catch (error) {
+  } catch (error: any) {
+    // Specify error type as any
     res.status(500).json({ error: error.message })
   }
 }

@@ -10,8 +10,14 @@ export const sendMessage = async (messages: ChatCompletionRequestMessage[]) => {
       body: JSON.stringify({ messages })
     })
 
+    if (!response.ok) {
+      throw new Error('Failed to send message')
+    }
+
     return await response.json()
   } catch (error) {
-    console.log(error)
+    console.error('Error sending message:', error)
+    // Optionally rethrow the error to propagate it to the caller
+    // throw error;
   }
 }
